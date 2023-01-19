@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'B2_G4_2023_Angular';
+  bonjour = 'Bonjour';
 }
