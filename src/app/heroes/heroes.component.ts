@@ -13,8 +13,14 @@ export class HeroesComponent {
   // heroes = HEROES;
   constructor(private heroService: HeroService) {}
   heroes: Hero[] = [];
+
+  ngOnInit(): void {
+    console.log('HeroesComponent.ngOnInit()');
+    this.getHeroes();
+  }
+
   getHeroes(): void {
-    this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
   }
   
   selectedHero?: Hero;
