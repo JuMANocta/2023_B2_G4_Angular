@@ -1,0 +1,5 @@
+<div *ngIf="messageService.messages.length"> <!--Une condition pour afficher si le tableau de message contients des messages-->
+    <h2>Messages</h2>
+    <button type="button" class="clear" (click)="messageService.clear()">Effacer les messages</button><!--Gérer son type et l'action au click en angular pour clear les messages-->
+    <div *ngFor="let message of messageService.messages" (click)="messageService.clearMessage(message)">{{message}}</div><!--Afficher tous les messages de notre tableau-->
+</div>
