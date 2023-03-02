@@ -25,6 +25,12 @@ export class MessageService {
     //   // si il est bien dedant alors splice de mon tableau
     //   this.messages.splice(index, 1)
     // }
-    this.messages = this.messages.filter(m => m!==message)
+    // this.messages = this.messages.filter(m => m!==message);
+    
+    const index = this.messages.findIndex(m => m === message);
+    if(index !== -1){
+      this.messages.splice(index, 1)
+    }
+
   }
 }
